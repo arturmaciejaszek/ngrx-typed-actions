@@ -23,6 +23,7 @@ export class ActionsService {
 export const debugTypeMap = (effect: string) => (source: Observable<any>): Observable<any> => {
   return source.pipe(
     map(res => {
+      if (!res) {return; }
       if (!res.type) {
         return res;
       }
